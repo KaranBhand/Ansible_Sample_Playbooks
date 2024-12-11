@@ -8,22 +8,6 @@ This repository contains resources and sample YAML playbooks for Ansible, includ
 
 ---
 
-## Table of Contents
-
-- [What is Ansible?](#what-is-ansible)
-- [Use Cases of Ansible](#use-cases-of-ansible)
-- [Installation](#installation)
-  - [Installing Ansible](#installing-ansible)
-  - [Adding Hosts to Ansible Master](#adding-hosts-to-ansible-master)
-- [Sample Playbooks](#sample-playbooks)
-  - [System Checks](#system-checks)
-  - [Docker Installation](#docker-installation)
-  - [NGINX Installation](#nginx-installation)
-- [Contributors](#contributors)
-- [License](#license)
-
----
-
 ## What is Ansible?
 
 Ansible is an IT automation platform that simplifies the management of systems by:
@@ -40,14 +24,3 @@ Ansible is an IT automation platform that simplifies the management of systems b
 - **Provisioning**: Set up servers, cloud instances, and containers quickly.
 - **Orchestration**: Manage complex workflows, such as multi-tier applications.
 - **Continuous Integration/Delivery (CI/CD)**: Facilitate DevOps pipelines with seamless automation.
-
----
-
-## Installation
-
-### Installing Ansible
-
-1. **Update System Packages**:
-   ```bash
-   sudo apt update
-   sudo apt upgrade
