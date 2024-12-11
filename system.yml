@@ -1,0 +1,7 @@
+---
+- name: Check system
+  hosts: servers
+  become: yes
+  tasks:
+    - name: Show Date of system
+      command: date
