@@ -1,0 +1,40 @@
+---
+- name: System Checks Playbook
+  hosts: all
+  become: yes
+  tasks:
+    - name: Check system date
+      command: date
+      register: system_date
+    - name: Display system date
+      debug:
+        var: system_date.stdout
+
+    - name: Check memory usage
+      command: free -h
+      register: memory_usage
+    - name: Display memory usage
+      debug:
+        var: memory_usage.stdout
+
+    - name: Check disk usage
+      command: df -kh
+      register: disk_usage
+    - name: Display disk usage
+      debug:
+        var: disk_usage.stdout
+
+    - name: Verify operating system type
+      debug:
+        msg: "This system is running {{ ansible_distribution }} ({{ ansible_distribution_version }})"
+
+    - name: Additional tasks for Ubuntu
+      debug:
+        msg: "Performing Ubuntu-specific checks..."
+      when: ansible_distribution == "Ubuntu"
+
+    - name: Additional tasks for Amazon Linux
+      debug:
+        msg: "Performing Amazon Linux-specific checks..."
+      when: ansible_distribution == "Amazon"
+
