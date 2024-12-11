@@ -1,0 +1,12 @@
+---
+- name: Install Docker
+  hosts: servers
+  become: yes
+  tasks:
+    - name: Install Docker based authentication on Ubuntu
+      apt:
+        name: docker.io
+        state: latest
+      when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+    
